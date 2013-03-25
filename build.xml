@@ -2,7 +2,7 @@
 
     <property file="build.properties"/>
     <property environment="env"/>
-	
+
     <target name="deployRunAllTests">
       <sf:deploy username="${sf.username}" 
         password="${sf.password}" 
@@ -14,4 +14,16 @@
 		pollWaitMillis="75000" 
 		/>
     </target>
+
+    <target name="deployRunAllTestsSandbox">
+      <sf:deploy username="${sf.username}" 
+        password="${sf.password}" 
+        serverurl="https://test.salesforce.com" 
+        runAllTests="true"
+        logType="Detail"
+        deployRoot="src"
+		maxPoll="900" 
+		pollWaitMillis="75000" 
+		/>
+    </target>	
 </project>
