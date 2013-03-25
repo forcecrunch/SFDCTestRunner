@@ -2,21 +2,16 @@
 
     <property file="build.properties"/>
     <property environment="env"/>
-
+	
     <target name="deployRunAllTests">
       <sf:deploy username="${sf.username}" 
         password="${sf.password}" 
         serverurl="${sf.serverurl}" 
         runAllTests="true"
         logType="Detail"
-        deployRoot="src"/>
+        deployRoot="src"
+		maxPoll="900" 
+		pollWaitMillis="75000" 
+		/>
     </target>
-
-    <target name="undeployCode">
-      <sf:deploy username="${sf.username}" 
-        password="${sf.password}" 
-        serverurl="${sf.serverurl}" 
-        deployRoot="undeploy"/>
-    </target>    
-
 </project>
