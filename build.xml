@@ -26,4 +26,10 @@
 		pollWaitMillis="75000" 
 		/>
     </target>	
+	
+    <target name="RunTestDefaultNamespaceSandbox">
+      <sf:compileAndTest username="${sf.username}" password="${sf.password}" serverurl="https://test.salesforce.com">
+		<runTests namespace="Default"/>
+      </sf:compileAndTest>
+    </target>		
 </project>
